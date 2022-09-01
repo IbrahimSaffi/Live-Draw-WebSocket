@@ -1,10 +1,12 @@
 const express = require("express");
+var cors = require('cors')
 const { Server } = require("socket.io");
+
 
 const app = express();
 
 app.use(express.static("public"));
-
+app.use(cors())
 
 const httpServer = app.listen(process.env.PORT || 8000);
 const io = new Server(httpServer)
