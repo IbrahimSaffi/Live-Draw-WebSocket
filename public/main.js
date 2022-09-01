@@ -1,5 +1,5 @@
 
-const socket = io.connect("http://localhost:8000/")
+const socket = io.connect(`http://localhost:${process.env.PORT || 8000}/`)
 const inputEl = document.querySelector("#message")
 
 let color;
@@ -41,4 +41,3 @@ function setup() {
     socket.emit('drawnByClient',{x:mouseX,y:mouseY,c:color})
   }
 
-  // draw()
