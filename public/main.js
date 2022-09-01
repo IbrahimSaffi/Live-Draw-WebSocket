@@ -1,5 +1,4 @@
-
-const socket = io.connect(`http://localhost:${process.env.PORT || 8000}/`)
+const socket = io.connect(location.origin)
 const inputEl = document.querySelector("#message")
 
 let color;
